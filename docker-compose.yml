@@ -1,0 +1,12 @@
+services:
+  php-devenv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${PWD}:/usr/src/php-dev
+    working_dir: /usr/src/php-dev
+    stdin_open: true
+    tty: true
+    profiles: ["dev"]
+
