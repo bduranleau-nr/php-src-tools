@@ -12,9 +12,8 @@ RUN apt-get update && apt-get install -y pkg-config \
 
 # configure and build PHP
 # create an alias 'rebuild' for ease-of-use
-# phpmake script will generate a custom Makefile (that php will later overwrite).
 # buildconf, configure and make are part of the PHP build process.
-RUN echo 'alias rebuild="/usr/src/php-dev/phpmake && /usr/src/php-dev/buildconf && /usr/src/php-dev/configure --enable-debug && make -j4"' >> ~/.bashrc
+RUN echo 'alias rebuild="/usr/src/php-dev/buildconf && /usr/src/php-dev/configure --enable-debug && make -j4"' >> ~/.bashrc
 
 WORKDIR /usr/src/php-dev/
 
